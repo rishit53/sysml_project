@@ -1,0 +1,8 @@
+| Prefixes | Dispatch | Cache | Cache + mcfill | Oracle bound |
+|---|---|---|---|---|
+| 1 | group-major | 3.27× | 3.43× | 7.22× |
+| 1 | request-major | 3.27× | 3.43× | 7.22× |
+| 4 | group-major | 3.14× | 3.80× | 5.30× |
+| 4 | request-major | 2.58× | 3.40× | 6.93× |
+| 16 | group-major | 2.82× | 4.48× | 4.48× |
+| 16 | request-major | 1.00× | 1.00× | 4.33× |

@@ -1,0 +1,54 @@
+
+== check1_llmcompass: PASS
+ batch  prefix  llmc_us  gbsim_us  time_err   kv_bytes  gbsim_dram   llmc_bytes  kv_share_of_llmc_bytes
+     8    1024   22.720    21.367    -0.060   41943040    41943040   44756992.0                   0.937
+     8    4096   76.559    70.519    -0.079  142606336   142606336  151650304.0                   0.940
+     8   16384  291.439   267.127    -0.083  545259520   545259520  579469312.0                   0.941
+    32    1024   89.634    82.847    -0.076  167772160   167772160  178925568.0                   0.938
+    32    4096  303.199   279.455    -0.078  570425344   570425344  607088640.0                   0.940
+    32   16384 1156.762  1065.887    -0.079 2181038080  2181038080 2318675968.0                   0.941
+   128    1024  356.584   328.627    -0.078  671088640   671088640  715128832.0                   0.938
+   128    4096 1208.983  1115.059    -0.078 2281701376  2281701376 2427449344.0                   0.940
+   128   16384 4625.197  4260.787    -0.079 8724152320  8724152320 9275502592.0                   0.941
+
+== check2_trace_model: PASS
+ batch  prefix  gb_MB         order  old_misses  gbsim_misses  accesses  gbsim_accesses
+     8    1024     11 request-major        1536          1536      5120            5120
+     8    1024     11    head-major        1536          1536      5120            5120
+    32    4096     11 request-major        8192          8192     69632           69632
+    32    4096     11    head-major        6144          6144     69632           69632
+    32   16384     27 request-major       20480         20480    266240          266240
+    32   16384     27    head-major       12288         12288    266240          266240
+   128    4096     27 request-major       32768         32768    278528          278528
+   128    4096     27    head-major       18432         18432    278528          278528
+   128   16384     67 request-major       81920         81920   1064960         1064960
+   128   16384     67    head-major       24576         24576   1064960         1064960
+
+== check4_sensitivity: PASS
+              variant     policy  batch  prefix  time_us  dram_dedup_x  vs_default
+              default scratchpad     32    4096  279.455         1.000       0.000
+              default scratchpad    128   16384 4260.787         1.000       0.000
+              default      cache     32    4096   89.665        11.333       0.000
+              default      cache    128   16384 1325.337        13.000       0.000
+           2x latency scratchpad     32    4096  280.105         1.000       0.002
+           2x latency scratchpad    128   16384 4261.437         1.000       0.000
+           2x latency      cache     32    4096   95.535        11.333       0.065
+           2x latency      cache    128   16384 1461.528        13.000       0.103
+         0.5x latency scratchpad     32    4096  279.130         1.000      -0.001
+         0.5x latency scratchpad    128   16384 4260.462         1.000      -0.000
+         0.5x latency      cache     32    4096   88.706        11.333      -0.011
+         0.5x latency      cache    128   16384 1322.519        13.000      -0.002
+             window 6 scratchpad     32    4096  279.279         1.000      -0.001
+             window 6 scratchpad    128   16384 4260.591         1.000      -0.000
+             window 6      cache     32    4096   91.512        11.333       0.021
+             window 6      cache    128   16384 1326.171        13.000       0.001
+            window 16 scratchpad     32    4096  279.701         1.000       0.001
+            window 16 scratchpad    128   16384 4261.085         1.000       0.000
+            window 16      cache     32    4096   87.101        11.333      -0.029
+            window 16      cache    128   16384 1314.611        13.000      -0.008
+2x latency, window 16 scratchpad     32    4096  280.351         1.000       0.003
+2x latency, window 16 scratchpad    128   16384 4261.735         1.000       0.000
+2x latency, window 16      cache     32    4096   87.998        11.333      -0.019
+2x latency, window 16      cache    128   16384 1320.335        13.000      -0.004
+
+ALL PASS

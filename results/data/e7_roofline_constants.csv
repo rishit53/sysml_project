@@ -1,0 +1,10 @@
+name,value
+flops_per_block,32768.0
+flop_per_kv_byte,4.0
+peak_tflops,369.62304
+kernel_ceiling_tflops,75.82011076923077
+hbm_TBps,2.048
+gb_TBps,7.2192
+hbm_roof_tflops,8.192
+gb_roof_nomulticast_tflops,28.8768
+ridge_hbm_flop_per_byte,37.02153846153846

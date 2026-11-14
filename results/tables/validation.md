@@ -1,0 +1,5 @@
+| Check | Result |
+|---|---|
+| 1. Scratchpad vs LLMCompass attention | HBM bytes identical in 9 of 9 cases; time error -8.3% to -6.0% |
+| 2. Zero-time mode vs earlier trace model | misses identical in 10 of 10 cases |
+| 4. Sensitivity to latency / prefetch window | largest change 10% across all variants (see docs/02_methodology.md) |

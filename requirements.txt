@@ -1,0 +1,6 @@
+pandas>=2.0
+numpy>=1.24
+matplotlib>=3.7
+reportlab>=4.0        # builds the PDF report (report/build_report.py)
+# Optional, only for gbsim/area.py and llmc/ (LLMCompass area model and step times):
+#   scalesim==2.0.2   and   git clone --recursive https://github.com/PrincetonUniversity/LLMCompass  (next to this folder)
